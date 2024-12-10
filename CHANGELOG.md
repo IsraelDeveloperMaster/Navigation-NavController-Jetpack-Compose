@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/compare/v1.1.0...v1.2.0) (2024-12-10)
+
+
+### Features
+
+* Add Information Screen and Navigation ([b537a41](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/commit/b537a410675fd163f4d06502f2e5b0787ecca80c))
+
 ## [1.1.0](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/compare/v1.0.0...v1.1.0) (2024-12-10)
 
 
