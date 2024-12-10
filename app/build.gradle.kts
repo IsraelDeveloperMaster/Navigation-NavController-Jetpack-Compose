@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.kotlin.compose)
+
+    //parcelize
+    alias(libs.plugins.kotlin.parcelize)
+
     /////////////  kotlin 2.0  ///////////////////
     alias(libs.plugins.compose.compiler)
     /////////////  kotlin 2.0  ///////////////////
@@ -61,8 +64,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //navigation navController
-    implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+
+    //serialization
+    implementation(libs.kotlinx.serialization.json)
 
 
 

@@ -2,7 +2,10 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-//    alias(libs.plugins.kotlin.compose) apply false
+
+    //pacelize
+    alias(libs.plugins.kotlin.parcelize) apply false
+
     /////////////  kotlin 2.0  ///////////////////
     alias(libs.plugins.compose.compiler) apply false
     /////////////  kotlin 2.0  ///////////////////
