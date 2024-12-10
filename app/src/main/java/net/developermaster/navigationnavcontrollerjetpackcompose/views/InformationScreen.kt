@@ -2,9 +2,12 @@ package net.developermaster.navigationnavcontrollerjetpackcompose.views
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,6 +25,8 @@ fun InformationScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
+        Spacer(modifier = Modifier.height(100.dp))
+
         Text(
             modifier = Modifier
                 .padding(all = 8.dp)//todo padding top
@@ -31,5 +36,15 @@ fun InformationScreen() {
             fontSize = 30.sp,//todo tamanho da fonte
             fontFamily = FontFamily.SansSerif,//todo tipo de fonte
         )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = {
+
+//            navigateToInformationScreen()
+
+        }) {
+            Text(text = "Login Screen")
+        }
     }
 }

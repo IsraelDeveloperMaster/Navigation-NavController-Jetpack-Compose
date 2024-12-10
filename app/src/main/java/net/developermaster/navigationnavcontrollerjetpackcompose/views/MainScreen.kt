@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MainScreen(navigateToLoginScreen: () -> Unit) {
+fun MainScreen(navigateToInformationScreen: () -> Unit) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -35,10 +35,20 @@ fun MainScreen(navigateToLoginScreen: () -> Unit) {
 
         Button(onClick = {
 
-            navigateToLoginScreen
+            navigateToInformationScreen()
 
         }) {
             Text(text = "Login Screen")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = {
+
+//            navigateToInformationScreen()
+
+        }) {
+            Text(text = "Information Screen")
         }
     }
 

@@ -35,7 +35,7 @@ fun LoginScreen(navigateToMainScreen: () -> Unit) {
 
         Button(onClick = {
 
-            navigateToMainScreen
+            navigateToMainScreen()
 
         }) {
             Text(text = "Main Screen")
