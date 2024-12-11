@@ -23,6 +23,7 @@ fun NavigationNavController() {
                 navController.navigate(ModelScreen.MainScreenObject.route)//navigate para rota principal utilizando função lambda
             }
         }
+/*
 
         //rota principal
         composable(ModelScreen.MainScreenObject.route) {
@@ -30,10 +31,20 @@ fun NavigationNavController() {
                 navController.navigate(ModelScreen.InformationScreenObject.route) //navigate para rota login utilizando função lambda
             }
         }
+*/
 
         //rota de informação
         composable(ModelScreen.InformationScreenObject.route) {
-            InformationScreen()
+            InformationScreen { navController.navigate(ModelScreen.LoginScreenObject.route) }
+        }
+
+        composable (ModelScreen.MainScreenObject.route)  {
+
+            MainScreen { navController.navigate(ModelDetalhes(nome = it).toString())}
+
         }
     }
 }
+
+
+//composable <ModelScreen.MainScreenObject> {

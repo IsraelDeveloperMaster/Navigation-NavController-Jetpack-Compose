@@ -6,7 +6,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -15,7 +20,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MainScreen(navigateToInformationScreen: () -> Unit) {
+fun MainScreen(navigateToInformationScreen: (String) -> Unit) {
+
+    var texto by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -33,32 +40,35 @@ fun MainScreen(navigateToInformationScreen: () -> Unit) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        TextField(
+            modifier = Modifier.height(50.dp),
+            singleLine = true,
+            maxLines = 1,
+            shape = androidx.compose.material3.Shapes().medium,
+            value = texto, onValueChange = {
+            texto = it
+        })
+
+
         Button(onClick = {
 
-            navigateToInformationScreen()
+//            navicontroller.navigate(ModelScreen.LoginScreenObject.route)
 
         }) {
-            Text(text = "Login Screen")
+
+            Text(text = "Recuperar Texto")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
 
-//            navigateToInformationScreen()
+            navigateToInformationScreen(texto)
 
         }) {
+
             Text(text = "Information Screen")
         }
     }
-
-    /*
-    LaunchedEffect(key1 = true) {
-        delay(5000)
-        navController.popBackStack()
-        navController.navigate(ModelScreen.MainScreenObject.route)
-    }
-    */
-
 }
 
