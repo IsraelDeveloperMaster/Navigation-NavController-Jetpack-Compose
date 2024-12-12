@@ -18,10 +18,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -79,8 +75,6 @@ fun TopBarInformation(navcontroller: NavController) {
 @Composable
 fun BodyInformation(paddingValues: PaddingValues, nome: String) {
 
-    var texto by remember { mutableStateOf("") }
-
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -103,7 +97,7 @@ fun BodyInformation(paddingValues: PaddingValues, nome: String) {
             singleLine = true,
             maxLines = 1,
             shape = androidx.compose.material3.Shapes().medium,
-            value = nome,
+            value = nome,//texto enviado da outra tela
             onValueChange = {  }
         )
 

@@ -41,7 +41,7 @@ fun MainScreen(navcontroller: NavController) {
 
             .background(color = Color.Blue),
             topBar = {
-                TopBar(navcontroller)
+                TopBarMainScreen(navcontroller)
             }
 
     ) { paddingValues ->
@@ -54,7 +54,7 @@ fun MainScreen(navcontroller: NavController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(navcontroller: NavController) {
+fun TopBarMainScreen(navcontroller: NavController) {
 
     Spacer(modifier = Modifier.height(100.dp))
 
