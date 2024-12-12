@@ -2,8 +2,10 @@ name: Release Please
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+
+  pull_request:
+    branches: [ master ]
 
 permissions:
   contents: write
