@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/compare/v1.2.0...v1.3.0) (2024-12-11)
+
+
+### Features
+
+* Implement navigation between Login, Main, and Information screens ([0af1411](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/commit/0af1411ee84fd44f304972b2b9b298e1bd6e960c))
+
 ## [1.2.0](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/compare/v1.1.0...v1.2.0) (2024-12-10)
 
 
