@@ -1,4 +1,4 @@
-package net.developermaster.navigationnavcontrollerjetpackcompose.views
+package net.developermaster.navigationnavcontrollerjetpackcompose.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

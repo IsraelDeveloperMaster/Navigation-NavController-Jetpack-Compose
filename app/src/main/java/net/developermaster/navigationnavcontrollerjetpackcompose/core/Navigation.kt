@@ -1,12 +1,14 @@
 package net.developermaster.navigationnavcontrollerjetpackcompose.core
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import net.developermaster.navigationnavcontrollerjetpackcompose.views.InformationScreen
-import net.developermaster.navigationnavcontrollerjetpackcompose.views.LoginScreen
-import net.developermaster.navigationnavcontrollerjetpackcompose.views.MainScreen
+import androidx.navigation.navArgument
+import net.developermaster.navigationnavcontrollerjetpackcompose.screens.InformationScreen
+import net.developermaster.navigationnavcontrollerjetpackcompose.screens.LoginScreen
+import net.developermaster.navigationnavcontrollerjetpackcompose.screens.MainScreen
 
 @Composable
 fun NavigationNavController() {
@@ -14,37 +16,44 @@ fun NavigationNavController() {
     //hook que retorna um navController
     val navController = rememberNavController()
 
-    //controlador de navegação
+    //controlador de navegação que recebe o navController para a rota inicial
     NavHost(navController = navController, startDestination = ModelScreen.LoginScreenObject.route) {
 
-        //rota de login
+        //rota de loginScreen
         composable(ModelScreen.LoginScreenObject.route) {
-            LoginScreen {
-                navController.navigate(ModelScreen.MainScreenObject.route)//navigate para rota principal utilizando função lambda
-            }
+            LoginScreen(navController)
         }
-/*
 
-        //rota principal
+        //rota mainScreen
         composable(ModelScreen.MainScreenObject.route) {
-            MainScreen {
-                navController.navigate(ModelScreen.InformationScreenObject.route) //navigate para rota login utilizando função lambda
-            }
-        }
-*/
-
-        //rota de informação
-        composable(ModelScreen.InformationScreenObject.route) {
-            InformationScreen { navController.navigate(ModelScreen.LoginScreenObject.route) }
+            MainScreen(navController)
         }
 
+        //rota de informationScreen
+        composable(ModelScreen.InformationScreenObject.route + "/{nome}" ,
+
+            arguments = listOf(navArgument("nome") {
+            type = NavType.StringType
+
+        })) {
+            InformationScreen(navController, it.arguments?.getString("nome") ?: "Não informado")
+        }
+
+    }
+
+}
+
+
+/*
         composable (ModelScreen.MainScreenObject.route)  {
 
             MainScreen { navController.navigate(ModelDetalhes(nome = it).toString())}
 
-        }
-    }
-}
+        }   */
+
+//rota de informação
+//
+//    }
 
 
 //composable <ModelScreen.MainScreenObject> {

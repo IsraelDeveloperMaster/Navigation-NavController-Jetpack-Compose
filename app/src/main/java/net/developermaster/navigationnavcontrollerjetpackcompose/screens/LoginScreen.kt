@@ -1,12 +1,9 @@
-package net.developermaster.navigationnavcontrollerjetpackcompose.views
+package net.developermaster.navigationnavcontrollerjetpackcompose.screens
 
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -16,9 +13,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import net.developermaster.navigationnavcontrollerjetpackcompose.core.ModelScreen
 
 @Composable
-fun InformationScreen(navigateToLoginScreen: () -> Unit) {
+fun LoginScreen(navcontroller: NavController) {
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -28,27 +27,22 @@ fun InformationScreen(navigateToLoginScreen: () -> Unit) {
         Spacer(modifier = Modifier.height(100.dp))
 
         Text(
-            modifier = Modifier
-                .padding(all = 8.dp)//todo padding top
-                .border(2.dp, Color.Yellow, CutCornerShape(20)),//todo borda amarela circular
-            text = "Information Screen",//todo texto
-            color = Color.Red,//todo cor vermelha
-            fontSize = 30.sp,//todo tamanho da fonte
-            fontFamily = FontFamily.SansSerif,//todo tipo de fonte
+            text = "Login Screen",
+            color = Color.Red,
+            fontSize = 30.sp,
+            fontFamily = FontFamily.SansSerif,
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
 
-            navigateToLoginScreen()
+            navcontroller.navigate(ModelScreen.MainScreenObject.route)
 
         }) {
 
-            Text(text = "Login Screen")
+            Text(text = "Main Screen")
+
         }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
     }
 }
