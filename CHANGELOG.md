@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/compare/v1.3.0...v1.4.0) (2024-12-13)
+
+
+### Features
+
+* Add ApartamentScreen and update navigation ([4d55521](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/commit/4d55521fd2f3db9e2e03f654fe138e43bc13f7ca))
+
 ## [1.3.0](https://github.com/IsraelDeveloperMaster/Navigation-NavController-Jetpack-Compose/compare/v1.2.0...v1.3.0) (2024-12-11)
 
 
