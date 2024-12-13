@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import net.developermaster.navigationnavcontrollerjetpackcompose.models.ModelScreen
+import net.developermaster.navigationnavcontrollerjetpackcompose.screens.ApartamentScreen
 import net.developermaster.navigationnavcontrollerjetpackcompose.screens.InformationScreen
 import net.developermaster.navigationnavcontrollerjetpackcompose.screens.LoginScreen
 import net.developermaster.navigationnavcontrollerjetpackcompose.screens.MainScreen
@@ -17,7 +19,7 @@ fun NavigationNavController() {
     val navController = rememberNavController()
 
     //controlador de navegação que recebe o navController para a rota inicial
-    NavHost(navController = navController, startDestination = ModelScreen.LoginScreenObject.route) {
+    NavHost(navController = navController, startDestination = ModelScreen.ApartamentScreenObject.route) {
 
         //rota de loginScreen
         composable(ModelScreen.LoginScreenObject.route) {
@@ -30,7 +32,8 @@ fun NavigationNavController() {
         }
 
         //rota de informationScreen
-        composable(ModelScreen.InformationScreenObject.route + "/{nome}" ,
+        composable(
+            ModelScreen.InformationScreenObject.route + "/{nome}" ,
 
             arguments = listOf(navArgument("nome") {
             type = NavType.StringType
@@ -39,21 +42,12 @@ fun NavigationNavController() {
             InformationScreen(navController, it.arguments?.getString("nome") ?: "Não informado")
         }
 
+        //rota de apartamentScreen
+        composable(ModelScreen.ApartamentScreenObject.route) {
+            ApartamentScreen(navController)
+        }
+
+
     }
 
 }
-
-
-/*
-        composable (ModelScreen.MainScreenObject.route)  {
-
-            MainScreen { navController.navigate(ModelDetalhes(nome = it).toString())}
-
-        }   */
-
-//rota de informação
-//
-//    }
-
-
-//composable <ModelScreen.MainScreenObject> {
